@@ -22,9 +22,9 @@ export class UsersService {
     return this.userModel.findById(id);
   }
 
-  findName(name: string) {
-    return this.userModel.find(() => this.userModel.name === name);
-  }
+  findByUsername(username: string) {
+    return this.userModel.findOne({ username }); 
+}
 
   update(id: string, updateUserDto: UpdateUserDto) {
     return this.userModel.findByIdAndUpdate(
